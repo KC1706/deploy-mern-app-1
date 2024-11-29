@@ -11,7 +11,7 @@ const ensureAuthenticated = (req, res, next) => {
         req.user = decoded;
         next();
     } catch (err) {
-        return res.status(403)
+        return res.status(401)
             .json({ message: 'Unauthorized, JWT token wrong or expired' });
     }
 }
